@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inyco Translator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Encode to Inyco</h1>
+    <form id="translationForm">
+        <label for="inputDecodedWord">Word to encode :</label>
+        <input type="text" id="inputDecodedWord" placeholder="Enter a word..."><br>
+        <button type="button" onclick="encode()">Encode</button>
+    </form>
+    
+    <p>Results in Inyco :</p>
+    <p id="outputEncodedWord"></p><br><br>
+
+    <h1>Decode Inyco</h1>
+    <form id="translationForm">
+        <label for="inputEncodedWord">Word to translate :</label>
+        <input type="text" id="inputEncodedWord" placeholder="Enter a word..."><br>
+        <button type="button" onclick="decode()">Decode</button>
+    </form>
+    
+    <p>Results Decoded</p>
+    <p id="outputDecodedWord"></p><br><br>
+
+    <script>
+        function encode() {
+            var input = document.getElementById("inputDecodedWord").value.toLowerCase();
+            var output = "";
+            // Encodage normal
+            for (var i = input.length - 1; i >= 0; i--) {
+                switch (input[i]) {
+                    case 'e':
+                        output += 'o';
+                        break;
+                    case 'i':
+                        output += 'e';
+                        break;
+                    case 'a':
+                        output += 'y';
+                        break;
+                    case 'y':
+                        output += 'u';
+                        break;
+                    case 'o':
+                        output += 'i';
+                        break;
+                    case 'u':
+                        output += 'a';
+                        break;
+                    case 't':
+                        output += 'th';
+                        break;
+                    default:
+                        output += input[i];
+
+                    
+                }
+            }
+
+            // Application de la règle spéciale pour "y" suivi de "r"
+            output = output.replace(/yr/g, "yur");
+            output = output.replace(/yb/g, "yub");
+            output = output.replace(/rb/g, "rub");
+
+            document.getElementById("outputEncodedWord").innerText = output;
+        }
+        
+        function decode() {
+            var input = document.getElementById("inputEncodedWord").value.toLowerCase();
+            var output = "";
+
+            // Encodage normal
+            for (var i = input.length - 1; i >= 0; i--) {
+                switch (input[i]) {
+                    case 'o':
+                        output += 'e';
+                        break;
+                    case 'e':
+                        output += 'i';
+                        break;
+                    case 'y':
+                        output += 'a';
+                        break;
+                    case 'u':
+                        output += 'y';
+                        break;
+                    case 'i':
+                        output += 'o';
+                        break;
+                    case 'a':
+                        output += 'u';
+                        break;
+                    default:
+                        output += input[i];
+                }
+            }
+
+            // Application des règles spéciales
+            output = output.replace(/rya/g, "ra");
+            output = output.replace(/bya/g, "ba");
+            output = output.replace(/rub/g, "rb");
+            output = output.replace(/ht/g, "t");
+
+            document.getElementById("outputDecodedWord").innerText = output;
+        }
+    </script>
+</body>
+</html>
