@@ -2,6 +2,32 @@
 
 body {
     font-family: Poppins, sans-serif;
+    color: white;
     text-align: center;
     overflow: hidden;
+    background-color: rgb(13, 17, 23);
+}
+button {
+    background-color: rgb(13, 17, 23);
+    color: white;
+    border-radius: 7px;
+    display: inline-block;
+    padding: 7px 7px;
+    margin-top: 10px;
+}
+#inputDecodedWord,
+#inputEncodedWord {
+    background-color: rgb(13, 17, 23);
+    color: white;
+    border-radius: 7px;
+    padding: 7px 7px;
+}
+div {
+    border: 1px solid #ffffff37; /* add this line */
+    border-radius: 25px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #33333300;
+    width: 500px;
+    margin: 20px auto;
 }
