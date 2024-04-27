@@ -7,25 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Encode to Inyco</h1>
-    <form id="translationForm">
-        <label for="inputDecodedWord">Word to encode :</label>
-        <input type="text" id="inputDecodedWord" placeholder="Enter a word..."><br>
-        <button type="button" onclick="encode()">Encode</button>
-    </form>
-    
-    <p>Results in Inyco :</p>
-    <p id="outputEncodedWord"></p><br><br>
+    <div id="container">
+        <h1>Encode to Inyco</h1>
+        <form id="translationForm">
+            <label for="inputDecodedWord">Word to encode :</label>
+            <input type="text" id="inputDecodedWord" placeholder="Enter a word..."><br>
+            <button type="button" onclick="encode()">Encode</button>
+        </form>
+        
+        <p>Results in Inyco :</p>
+        <p id="outputEncodedWord"></p><br><br>
+    </div>
 
-    <h1>Decode Inyco</h1>
-    <form id="translationForm">
-        <label for="inputEncodedWord">Word to translate :</label>
-        <input type="text" id="inputEncodedWord" placeholder="Enter a word..."><br>
-        <button type="button" onclick="decode()">Decode</button>
-    </form>
+    <div id="container">
+        <h1>Decode Inyco</h1>
+        <form id="translationForm">
+            <label for="inputEncodedWord">Word to translate :</label>
+            <input type="text" id="inputEncodedWord" placeholder="Enter a word..."><br>
+            <button type="button" onclick="decode()">Decode</button>
+        </form>
     
-    <p>Results Decoded</p>
-    <p id="outputDecodedWord"></p><br><br>
+        <p>Results Decoded</p>
+        <p id="outputDecodedWord"></p><br><br>
+    </div>
 
     <script>
         function encode() {
